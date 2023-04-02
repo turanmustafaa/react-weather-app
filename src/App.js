@@ -30,15 +30,15 @@ function App() {
       })
       .catch(console.log);
   };
-  console.log(currentWeather);
-  console.log(forecast);
+  // console.log(currentWeather);
+  // console.log(forecast);
   return (
     <div className="App">
       <div className="container">
         <Search onSearchChange={handleOnSearchChange} />
         <div>
           <Weather data={currentWeather} />
-          <Forecast data={forecast} />
+          {forecast && <Forecast data={forecast} />}
         </div>
       </div>
     </div>

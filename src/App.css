@@ -9,10 +9,10 @@
 }
 
 .App .container {
-  width: 70%;
+  width: 85%;
   display: flex;
   height: 70%;
-  border-radius: 10%;
+  border-radius: 50px;
   overflow: hidden;
 }
 
@@ -28,11 +28,12 @@
   text-align: center;
 }
 .App .container > div:nth-child(2) > div:nth-child(1) {
-  height: 40%;
+  height: 50%;
+  width: 100%;
 }
 .App .container > div:nth-child(2) > div:nth-child(2) {
   background-color: #FFD93D;
   width: 100%;
-  height: calc(100% - 40%);
+  height: 50%;
 }
 

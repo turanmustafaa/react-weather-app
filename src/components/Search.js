@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export default function Search({onSearchChange}) {
 
-    console.log(cities)
+    // console.log(cities)
   // note: the id field is mandatory
   const items = cities
 
@@ -23,7 +23,6 @@ export default function Search({onSearchChange}) {
   const handleOnSelect = (item) => {
     // the item selected
     onSearchChange(item)
-    console.log(item ,"selected")
   }
 
   // const handleOnFocus = () => {
@@ -76,7 +75,7 @@ const Div = styled.div`
   z-index : 2;
     }
    & > div {
-    width: 100%;
+    width: 90%;
     z-index: 3
    }
 `
