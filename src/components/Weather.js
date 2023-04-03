@@ -43,7 +43,7 @@ export default function Weather({data}) {
         </div>
         </>
       }
-    </Card>  : <div>henuz data yok</div>
+    </Card>  : <div>lütfen sehir arayınız... henuz veri yok...</div>
     }</div>
   )
 }

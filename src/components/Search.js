@@ -3,12 +3,28 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import cities from 'cities.json';
 import styled from 'styled-components';
 
-export default function Search({onSearchChange}) {
+export default function Search({onSearchChange, geoLocationFunc}) {
 
     // console.log(cities)
   // note: the id field is mandatory
   const items = cities
 
+
+  const geolocationData = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+
+    function showPosition(position) {
+      const lat = position.coords.latitude
+      const lng = position.coords.longitude
+      const data = {
+        lat,
+        lng
+      }
+      geoLocationFunc(data)
+  }
+}
   // const handleOnSearch = (string, results) => {
   //   // onSearch will have as the first callback parameter
   //   // the string searched and for the second the results.
@@ -47,6 +63,7 @@ export default function Search({onSearchChange}) {
             autoFocus
             formatResult={formatResult}
           />
+          <button className='btn' style={{zIndex: "5"}} onClick={geolocationData}>getlocation</button>
     </Div>
   )
 }
@@ -75,7 +92,16 @@ const Div = styled.div`
   z-index : 2;
     }
    & > div {
-    width: 90%;
-    z-index: 3
+    width: 50%;
+    z-index: 3;
+    margin-right : 10px;
+   }
+   .btn {
+    background: none;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius : 10px;
+    color: white;
+    cursor : pointer ;
    }
 `

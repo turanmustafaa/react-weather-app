@@ -63,9 +63,14 @@ const AccordionDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content : space-around ;
-
+      align-items : center;
+      height: 100%;
     .head {
       font-weight : 600;
+      font-size : 12px;
+    }
+    & > img {
+      width: 50%;
     }
     }
 
@@ -78,18 +83,24 @@ const AccordionDiv = styled.div`
       display: flex;
       flex-direction : column;
       justify-content : center;
-      width: 90%;
+      width: 100%;
       padding: 10px;
       .head-forecast {
         flex-direction : row;
         align-items : center;
+        justify-content : space-around ;
+        width: 70%;
+        & > img {
+          width: 40px;
+          height 40px: 
+        }
       }
 
       .details-forecast {
         display: flex;
-        flex-wrap : wrap;
         justify-content : space-between;
         & > div {
+          font-size : 10px !important ;
           margin: 5px;
           & > p:nth-child(1){
             font-weight : 500
